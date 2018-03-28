@@ -51,11 +51,19 @@ npm install mjml
 
 To work on MJML, make changes and create merge requests, download and install [yarn](https://yarnpkg.com/lang/en/docs/install/) for easy development.
 
+## using Yarn
+
 ```bash
 git clone https://github.com/mjmlio/mjml.git && cd mjml
 yarn 
 yarn build
 ```
+## using NPM
+
+```bash
+git clone https://github.com/mjmlio/mjml.git && cd mjml
+npm install 
+npm build
 
 You can also run `yarn build:watch` to rebuild the package as you code.
 
@@ -98,6 +106,28 @@ argument | description | default value
 `mjml -w [input]` | Watches the changes made to [input] (file or folder) | NA
 `mjml [input] --config.beautify` | Beautifies the output (`true` or `false`) | true
 `mjml [input] --config.minify` | Minifies the output (`true` or `false`) | false
+
+## Using the "playground"
+
+Using the playground allows you to develop EDM templates using the compiled MJML from the current repository. The package includes auto browser reloading via `BrowserSync`. To get started, complete the <a href="#installation">installation</a> procedure then proceed with the following guide:
+
+1. Navigate inside `/playground` folder
+   ```bash
+   cd playground
+   ````
+2. Install packages
+   ```bash
+   npm install
+    ```
+3. Copy `src-sample` to `src`
+   ```bash
+   cp -r src-sample src
+    ```
+4. Run `gulp
+   ```bash
+   gulp
+    ```
+5. Start editing `/playground/src/index.mjml` output will go directly `/playground/src/output/index.html` and will automatically reload your browser to see the changes
 
 ## Inside Node.js
 

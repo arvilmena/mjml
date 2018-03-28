@@ -3,3 +3,8 @@
 lib
 node_modules
 test.html
+
+################
+## Playground ##
+################
+/playground/src/

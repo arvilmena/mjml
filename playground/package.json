@@ -1,0 +1,25 @@
+{
+  "name": "mjml4-playground",
+  "version": "1.0.0",
+  "description": "Build EDM templates using MJML4 using this package. Must be inside the main MJML4 repository. Note: this package must be inside a folder of MJML4 repository",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm i -g cross-env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mjml4",
+    "edm",
+    "responsive",
+    "email",
+    "template"
+  ],
+  "author": "Arvil Mena",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "cross-env": "^5.1.4",
+    "gulp": "^4.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}
