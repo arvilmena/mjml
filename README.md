@@ -110,7 +110,7 @@ argument | description | default value
 
 ## Using the "playground"
 
-Using the playground allows you to develop EDM templates using the compiled MJML from the current repository. The package includes auto browser reloading via `BrowserSync`. To get started, complete the <a href="#installation">installation</a> procedure then proceed with the following guide:
+Using the playground allows you to develop EDM templates using the compiled MJML from the current repository. The package includes auto browser reloading via `BrowserSync`. To get started, complete the <a href="#development">Development</a> procedure then proceed with the following guide:
 
 1. Navigate inside `/playground` folder
    ```bash
