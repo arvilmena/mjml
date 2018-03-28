@@ -51,6 +51,7 @@ export default class MjButton extends BodyComponent {
     'text-decoration': 'none',
     'text-transform': 'none',
     'vertical-align': 'middle',
+    'mso-hide': 'all',
   }
 
   getStyles() {
@@ -75,6 +76,18 @@ export default class MjButton extends BodyComponent {
       },
       content: {
         background: this.getAttribute('background-color'),
+        color: this.getAttribute('color'),
+        'font-family': this.getAttribute('font-family'),
+        'font-size': this.getAttribute('font-size'),
+        'font-style': this.getAttribute('font-style'),
+        'font-weight': this.getAttribute('font-weight'),
+        'line-height': this.getAttribute('line-height'),
+        Margin: '0',
+        'text-decoration': this.getAttribute('text-decoration'),
+        'text-transform': this.getAttribute('text-transform'),
+        'mso-hide': this.getAttribute('mso-hide'),
+      },
+      contentMSO: {
         color: this.getAttribute('color'),
         'font-family': this.getAttribute('font-family'),
         'font-size': this.getAttribute('font-size'),
@@ -115,6 +128,20 @@ export default class MjButton extends BodyComponent {
               valign: this.getAttribute('vertical-align'),
             })}
           >
+
+        <!--[if mso]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${this.getAttribute('href')}" style="height:${this.getAttribute('height')};v-text-anchor:middle;width:${this.getAttribute('width')};" arcsize="0%" strokecolor="${this.getAttribute('background-color')}" fillcolor="${this.getAttribute('background-color')}">
+            <w:anchorlock/>
+                <center
+                  ${this.htmlAttributes({
+                    style: 'contentMSO',
+                  })}
+                >
+                  ${this.getContent()}
+                </center>
+        </v:roundrect>
+        <![endif]-->
+
             <${tag}
               ${this.htmlAttributes({
                 href: this.getAttribute('href'),

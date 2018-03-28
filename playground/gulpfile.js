@@ -3,6 +3,8 @@ var browserSync = require('browser-sync').create();
 var path = require('path');
 var gutil = require('gulp-util');
 var exec = require('child_process').exec;
+var log = require('fancy-log');
+var colors = require('ansi-colors');
 
 const src = "./src/index.mjml"
 const dest = "./src/output/"
@@ -20,20 +22,32 @@ gulp.task('default', function () {
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.
     gulp.watch("./src/*.mjml", compileTemplates);
-    gulp.watch("./src/output/*.html", browserSync.reload());
+    gulp.watch("./src/output/*.html", function(done) {
+        colors.bold(colors.cyan('[info]')), colors.cyan("> Reloading browser because of changes in output folder")
+        browserSync.reload()
+        done()
+    });
 });
 
 function compileTemplates(done) {
   // var cmd = `'node_modules/.bin/mjml' 'src/index.mjml'`
   var cmd = `cross-env ${path.resolve("./../packages/mjml/bin/mjml")} ${path.resolve(src)} --output ${path.resolve(dest)}`
-  console.log("Executing: ", cmd);
-  return  exec(cmd, (error, stdout, stderr) => {
+  log(
+        colors.bold(colors.cyan('[info]')), colors.cyan("> Executing: \n"+ cmd)
+    );
+  browserSync.notify("Compiling, please wait!");
+  exec(cmd, (error, stdout, stderr) => {
       if (error) {
-        console.error(`exec error: ${error}`);
-        return;
+      log(
+            colors.bold(colors.red('[ERROR]')), colors.red('> compileTemplates failed!')
+        );
+        done()
       }
-      console.log(`stdout: ${stdout}`);
-      console.log(`stderr: ${stderr}`);
+      // console.log(`stdout: ${stdout}`);
+      // console.log(`stderr: ${stderr}`);
+      log(
+            colors.bold(colors.green('[success]')), colors.green('> compileTemplates success!')
+        );
       done();
     });
 }
