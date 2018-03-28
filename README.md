@@ -64,6 +64,7 @@ yarn build
 git clone https://github.com/mjmlio/mjml.git && cd mjml
 npm install 
 npm build
+```
 
 You can also run `yarn build:watch` to rebuild the package as you code.
 
