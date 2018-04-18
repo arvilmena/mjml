@@ -68,4 +68,7 @@ export default {
   'mj-table': [],
   'mj-text': [],
   'mj-wrapper': ['mj-hero', 'mj-raw', 'mj-section'],
+
+  'mj-cm-repeater': [/^.*^/],
+  'mj-cm-layout': [/^.*^/],
 }

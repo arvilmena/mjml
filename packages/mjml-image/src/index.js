@@ -28,6 +28,7 @@ export default class MjImage extends BodyComponent {
     'padding-top': 'unit(px,%)',
     height: 'unit(px,%)',
     width: 'unit(px,%)',
+    editable: 'string',
   }
 
   static defaultAttributes = {
@@ -36,6 +37,7 @@ export default class MjImage extends BodyComponent {
     height: 'auto',
     padding: '10px 25px',
     target: '_blank',
+    editable: 'false',
   }
 
   getStyles() {
@@ -93,7 +95,7 @@ export default class MjImage extends BodyComponent {
   }
 
   renderImage() {
-    const img = `
+    var img = `
       <img
         ${this.htmlAttributes({
           alt: this.getAttribute('alt'),
@@ -103,9 +105,12 @@ export default class MjImage extends BodyComponent {
           style: 'img',
           title: this.getAttribute('title'),
           width: this.getContentWidth(),
-        })}
-      />
-    `
+        })}`
+
+    if (this.getAttribute('editable').toLowerCase() == "true") {
+        img +=  ` editable`
+    }
+    img +=  `/>`
 
     if (this.getAttribute('href')) {
       return `

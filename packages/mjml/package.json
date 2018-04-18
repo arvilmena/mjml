@@ -48,6 +48,8 @@
     "mjml-table": "^4.0.1",
     "mjml-text": "^4.0.3",
     "mjml-validator": "^4.0.1",
-    "mjml-wrapper": "^4.0.1"
+    "mjml-wrapper": "^4.0.1",
+    "mjml-cm-repeater": "^4.0.3",
+    "mjml-cm-layout": "^4.0.3"
   }
 }

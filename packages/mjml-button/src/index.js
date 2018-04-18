@@ -130,8 +130,9 @@ export default class MjButton extends BodyComponent {
           >
 
         <!--[if mso]>
-        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${this.getAttribute('href')}" style="height:${this.getAttribute('height')};v-text-anchor:middle;width:${this.getAttribute('width')};" arcsize="0%" strokecolor="${this.getAttribute('background-color')}" fillcolor="${this.getAttribute('background-color')}">
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:${this.getAttribute('height')};v-text-anchor:middle;width:${this.getAttribute('width')};" arcsize="0%" strokecolor="${this.getAttribute('background-color')}" fillcolor="${this.getAttribute('background-color')}">
             <w:anchorlock/>
+    <singleline label="*Developer* This is to fix the output in Microsoft Outlook">
                 <center
                   ${this.htmlAttributes({
                     style: 'contentMSO',
@@ -139,9 +140,12 @@ export default class MjButton extends BodyComponent {
                 >
                   ${this.getContent()}
                 </center>
+    </singleline>
+            </singleline>
         </v:roundrect>
         <![endif]-->
 
+    <singleline label="Link">
             <${tag}
               ${this.htmlAttributes({
                 href: this.getAttribute('href'),
@@ -152,6 +156,7 @@ export default class MjButton extends BodyComponent {
             >
               ${this.getContent()}
             </${tag}>
+    </singleline>
           </td>
         </tr>
       </table>

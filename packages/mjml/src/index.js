@@ -44,6 +44,9 @@ registerComponent(AccordionTitle)
 registerComponent(Carousel)
 registerComponent(CarouselImage)
 
+registerComponent(require('mjml-cm-repeater'))
+registerComponent(require('mjml-cm-layout'))
+
 registerDependencies(require('./dependencies'))
 
 export default mjml2html
